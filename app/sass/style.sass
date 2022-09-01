@@ -1,0 +1,365 @@
+@import 'vars'
+@import 'fonts'
+@import 'reset'
+@import 'libs'
+@import 'global'
+@import 'mixin'
+
+.header
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    width: 100%
+    // padding: 26px 0
+    padding: 1.46vw 0
+    background: #FFFFFF
+    backdrop-filter: blur(0px)
+    color: $black
+    z-index: 10
+    &-inner
+        align-items: center
+        justify-content: space-between
+    &-logo
+        margin-right: 7.8vw
+        // margin-right: 150px
+        width: 4.5vw
+        height: 3.3vw
+        svg
+            width: 100%
+            height: 100%
+
+    &-contacts
+        align-items: center
+        margin-right: 70px
+    &-contact__link
+        display: flex
+        align-items: center
+        justify-content: center
+        // width: 35px
+        // height: 32px
+        width: 1.89vw
+        height: 1.67vw
+        &:not(:last-child)
+            // margin-right: 50px
+            margin-right: 2.6vw
+        svg
+            width: 100%
+            height: 100%
+        svg path
+            transition: all .3s cubic-bezier(0.4, 0, 1, 1)
+        &:hover svg path
+            fill-opacity: 1
+
+.header.light
+    background: rgba(255, 255, 255, 0.01)
+    backdrop-filter: blur(10px)
+    color: $black
+    svg path
+        fill: #fff
+        fill-opacity: 0.8
+    .menu-item
+        color: #fff
+
+.main-menu
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+.menu-item
+    font-weight: 400
+    line-height: 29px
+    text-transform: uppercase
+    // color: #fff
+    color: $black
+    transition: all .3s cubic-bezier(0.4, 0, 1, 1)
+    &:not(:last-child)
+        // margin-right: 100px
+        margin-right: 5.2vw
+    &:hover
+        opacity: 0.8
+    a
+        font-size: inherit
+        font-weight: inherit
+
+//main section
+.main
+    &-wrapper
+        color: #fff
+    &-container
+        position: relative
+    &__heading
+        position: absolute
+        top: 36%
+        left: 100px
+        z-index: 2
+
+.main-item
+    height: 100vh
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center center
+    &__box
+        align-items: flex-end
+        justify-content: space-between
+        max-width: 1000px
+        width: 100%
+        height: 100%
+        margin: -46px auto 0
+    &__text
+        min-width: 268px
+        text-align: right
+    &__link
+        display: flex
+        align-items: center
+        svg
+            transition: all .3s cubic-bezier(0.4, 0, 1, 1)
+        &:hover svg
+            transform: translate3d(3px, -3px, 10px)
+
+// Services
+.services
+    &__items
+        margin-bottom: 50px
+    &__btn
+        display: block
+        margin: 0 auto
+
+.services-item
+    justify-content: space-between
+    align-items: center
+    // padding: 40px 0
+    padding: 2vw 0
+    border-top: 1px solid #797979
+    transition: all .3s cubic-bezier(0.4, 0, 1, 1)
+    &:last-child
+        border-bottom: 1px solid #797979
+    &:hover
+        border-color: $black
+
+// steps
+.steps
+    &__title
+        margin-bottom: 40px
+    &__items
+        font-size: 20px
+        line-height: 27px
+    &-arrows
+        display: flex
+        align-items: center
+        justify-content: flex-end
+
+.steps-item
+    &__title
+        margin-bottom: 20px
+
+.swiper-button-prev
+    margin-right: 40px
+
+.swiper-button-next, .swiper-button-prev
+    position: relative
+    top: initial
+    width: 34px
+    height: 14px
+    margin-top: 0
+    z-index: 10
+    cursor: pointer
+    display: flex
+    align-items: center
+    justify-content: center
+    transition: all .3s
+    &:active
+        transform: translateY(2px)
+    &::after
+        display: none
+    svg path
+        transition: all .3s cubic-bezier(0.4, 0, 1, 1)
+    &:hover svg path
+        stroke: #797979
+
+// callback
+.callback
+    &__inner
+        align-items: flex-start
+        justify-content: space-between
+    &__title
+        // max-width: 880px
+        // width: 100%
+        margin-right: 40px
+    &-form
+        max-width: 560px
+        width: 100%
+    &-btn
+        cursor: pointer
+        width: 100%
+        display: block
+        transition: all .3s cubic-bezier(0.4, 0, 1, 1)
+
+//partners
+.partners
+    &__items
+        justify-content: space-between
+        align-items: center
+        max-width: 923px
+        width: 100%
+        margin: 0 auto
+
+// project video
+.project-wrapper
+    height: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    overflow: hidden
+    cursor: none
+
+.project-video
+    height: auto
+
+.cursor
+    width: 50px
+    height: 50px
+    display: flex
+    align-items: center
+    justify-content: center
+    transition: all 200ms ease-out
+    position: fixed
+    pointer-events: none
+    border: 1px solid #fff
+    border-radius: 50%
+    padding: 15px 10px
+    left: 0
+    top: 0
+    transform: translate(calc(-50% + 15px), -50%)
+    z-index: 10
+
+.project-info-wrapper
+    max-width: 1539px
+    width: 100%
+    padding-right: 100px
+    margin-left: auto
+
+.project-container
+    max-width: 1539px
+    width: 100%
+    margin-left: auto
+    margin-right: 0
+
+.project
+    padding-top: 164px
+
+.projects-slider .slider__actions
+    width: 340px
+    display: flex
+    align-items: center
+    justify-content: center
+
+.project-gallary
+    width: 100%
+    height: 759px
+    cursor: grab
+    .swiper-slide__inner
+        width: 480px
+        height: 100%
+        display: flex
+        justify-content: center
+        align-items: center
+    .swiper-slide__inner>div
+        display: flex
+        align-items: center
+        width: 80%
+        height: 85%
+        font-size: 20px
+        line-height: 29px
+    .swiper-slide
+        width: auto
+    .swiper-slide img
+        width: auto
+        height: 100%
+
+.slider
+    display: flex
+
+.swiper-nav
+    display: flex
+    align-items: center
+
+.description
+    scroll-margin-top: 120px
+    &__inner
+        justify-content: space-between
+    &__text
+        max-width: 870px
+        width: 100%
+        margin-left: 40px
+    &-info__title
+        font-weight: 500
+        font-size: 18px
+        line-height: 27px
+
+.form-grid
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-column-gap: 90px
+    max-width: 870px
+    width: 100%
+
+.projects-item
+    transition: all .3s
+    &:hover
+        transform: translateY(-5px)
+    &__img
+        margin-bottom: 20px
+
+//services page
+.services
+    &-page
+        padding-top: 5.9vw
+    &__inner
+        padding-right: 100px
+
+    &-col__img-top
+        margin-right: 100px
+        max-width: 557px
+        height: auto
+    &-col__title
+        margin-bottom: 40px
+        font-weight: 400
+    &-list li
+        position: relative
+        padding-left: 17px
+        &:not(:last-child)
+            margin-bottom: 27px
+        &::before
+            content: ''
+            position: absolute
+            left: 0
+            top: 13px
+            width: 4px
+            height: 4px
+            border-radius: 50%
+            background-color: $black
+
+    &-col__img-bottom
+        max-width: 641px
+        margin-left: 65px
+
+.spollers__item
+    &:not(:last-child)
+        margin-bottom: 15px
+.spollers__title
+    display: flex
+    align-items: center
+    padding: 10px 20px 10px 0px
+    cursor: pointer
+    span
+        margin-right: 30px
+        transition: all .3s
+
+    &.active span
+        transform: rotate(45deg)
+.spollers__text
+    padding-left: 70px
+    padding-top: 31px
+
+@import media
