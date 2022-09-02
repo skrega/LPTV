@@ -173,17 +173,19 @@
             </div>
           </div>
           <div class="swiper-scrollbar"></div>
-          <div class="cursor swiper-button-next">
-            <svg width="35" height="16" viewBox="0 0 35 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M34 8L27.9104 15M34 8L27.9104 0.999999M34 8L2.20121e-06 8" stroke="#ffffff" />
-            </svg>
-          </div>
-          <div class="cursor cursor2 swiper-button-prev">
-            <svg width="35" height="16" viewBox="0 0 35 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1 8L7.08955 1M1 8L7.08955 15M1 8L35 8" stroke="#ffffff" />
-            </svg>
-          </div>
+          <div class="main-swiper-btn swiper-button-next"></div>
+          <div class="swiper-button-btn swiper-button-prev"></div>
         </div>
+      </div>
+      <div class="cursor">
+        <svg width="35" height="16" viewBox="0 0 35 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M34 8L27.9104 15M34 8L27.9104 0.999999M34 8L2.20121e-06 8" stroke="#ffffff" />
+        </svg>
+      </div>
+      <div class="cursor cursor2">
+        <svg width="35" height="16" viewBox="0 0 35 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 8L7.08955 1M1 8L7.08955 15M1 8L35 8" stroke="#ffffff" />
+        </svg>
       </div>
 
       <section class="services section">
@@ -362,50 +364,42 @@
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <script src="js/main.min.js"></script>
-  <!-- <script>
-    //el.addEventListener('mouseenter', function() {mySwiper.slideTo(el.dataset.swiperSlideIndex) }
+  <!--<script>
+    let mainWrapper = $('.main-wrapper').height();
     let cursor = document.querySelector('.cursor');
     let cursorinner = document.querySelector('.cursor2');
-    //let a = document.querySelectorAll('a');
-
-    document.addEventListener('mousemove', function (e) {
-      let x = e.clientX;
-      let y = e.clientY;
-      if (x > 1000) {
-        cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`
-        cursorinner.style.display = 'none'
-      } else {
-        cursorinner.style.display = 'flex'
-      }
-      //else{
-      //cursorinner.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`
-      //}
-
-    });
-
-    document.addEventListener('mousemove', function (e) {
-      let x = e.clientX;
-      let y = e.clientY;
-      if (x < 1000) {
-        cursorinner.style.left = x + 'px';
-        cursorinner.style.top = y + 'px';
-        cursor.style.display = 'none'
-      } else {
-        cursor.style.display = 'flex'
-      }
-
-    });
-
-    document.addEventListener('mousedown', function () {
-      cursor.classList.add('click');
-      //cursorinner.classList.add('cursorinnerhover')
-    });
-
-    document.addEventListener('mouseup', function () {
-      cursor.classList.remove('click')
-      //cursorinner.classList.remove('cursorinnerhover')
-    });
-  </script>-->
+    if (mainWrapper) {
+      document.addEventListener('mousemove', function (e) {
+        let x = e.clientX;
+        let y = e.clientY;
+        if (x > 1000) {
+          cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`
+          cursorinner.style.display = 'none'
+        } else {
+          cursorinner.style.display = 'flex'
+        }
+      });
+      document.addEventListener('mousemove', function (e) {
+        let x = e.clientX;
+        let y = e.clientY;
+        if (x < 1000) {
+          cursorinner.style.left = x + 'px';
+          cursorinner.style.top = y + 'px';
+          cursor.style.display = 'none'
+        } else {
+          cursor.style.display = 'flex'
+        }
+      });
+      document.addEventListener('mousedown', function () {
+        cursor.classList.add('click');
+        cursorinner.classList.add('cursorinnerhover')
+      });
+      document.addEventListener('mouseup', function () {
+        cursor.classList.remove('click')
+        cursorinner.classList.remove('cursorinnerhover')
+      });
+    }
+  </script> -->
 </body>
 
 </html>

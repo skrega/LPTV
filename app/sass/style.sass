@@ -50,7 +50,7 @@
         svg path
             transition: all .3s cubic-bezier(0.4, 0, 1, 1)
         &:hover svg path
-            fill-opacity: 1
+            fill: $grey
 
 .header.light
     background: rgba(255, 255, 255, 0.01)
@@ -121,6 +121,19 @@
             transition: all .3s cubic-bezier(0.4, 0, 1, 1)
         &:hover svg
             transform: translate3d(3px, -3px, 10px)
+
+.main-swiper
+    .swiper-button-next,
+    .swiper-button-prev
+        position: absolute
+        top: 0
+        bottom: 0
+        width: 50%
+        height: 100%
+    .swiper-button-next
+        right: 0
+    .swiper-button-prev
+        left: 0
 
 // Services
 .services
@@ -310,11 +323,45 @@
     width: 100%
 
 .projects-item
-    transition: all .3s
-    &:hover
-        transform: translateY(-5px)
-    &__img
+    &__inner
+        position: relative
         margin-bottom: 20px
+    &__link
+        position: absolute
+        left: 0
+        right: 0
+        top: 0
+        bottom: 0
+        margin: auto
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 138px
+        height: 138px
+        border-radius: 50%
+        background-color: rgba(255, 255, 255, 0.8)
+        font-weight: 400
+        font-size: 12px
+        line-height: 17px
+        letter-spacing: 0.012em
+        opacity: 0
+        transition: all .3s cubic-bezier(0.4, 0, 1, 1)
+    &__link span
+        position: relative
+        padding-right: 17px
+        &::before
+            content: ""
+            position: absolute
+            right: 0
+            top: 0
+            width: 17px
+            height: 17px
+            background-image: url(../images/icons/arrow-link-dark.svg)
+            background-repeat: no-repeat
+            background-size: cover
+            background-position: center center
+    &:hover .projects-item__link
+        opacity: 1
 
 //services page
 .services

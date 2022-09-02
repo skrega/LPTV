@@ -3,7 +3,7 @@
         padding: 1vw 1.25vw
 
     .callback__title
-        font-size: 22px
+        font-size: 24px
         line-height: 36px
 
     .project-container
@@ -17,7 +17,7 @@
         line-height: 21px
 
     .services-list li:not(:last-child)
-        margin-bottom: 17px
+        margin-bottom: 16px
 
     .services-list li::before
         top: 8px
@@ -28,10 +28,20 @@
 
     .services-col__title
         font-size: 18px
-        margin-bottom: 26px
 
+    .services-col__title.mb-5
+        margin-bottom: 60px
+    .services-list.title-mb
+        margin-bottom: 60px
     .services-col__img-bottom
-        max-width: 601px
+        max-width: 461px
+
+    .callback-form
+        max-width: 460px
+
+    .form-grid
+        max-width: 770px
+        grid-column-gap: 50px
 
 @media (max-width: 1366px)
     body
@@ -248,7 +258,7 @@
     .faq-img img
         height: 190px
         object-fit: cover
-        
+
     //project
     .project
         padding-top: 102px
@@ -330,8 +340,8 @@
             margin-bottom: 0
         &__img
             display: none
-
         &-arrows
+            margin-top: 30px
             margin-bottom: 0
 
     .callback
@@ -372,8 +382,11 @@
         flex-direction: column-reverse
         display: flex
         align-items: center
-    .projects-item
-        margin-bottom: 20px
+
+    .project-gallary .swiper-slide img
+        height: auto
+    .project-gallary .swiper-slide__inner>div
+        width: 100%
 
     .spollers__title
         align-items: flex-start
@@ -384,3 +397,5 @@
     .form-grid
         display: flex
         flex-direction: column
+
+    

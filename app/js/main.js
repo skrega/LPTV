@@ -50,16 +50,13 @@ $(function () {
     slidesPerView: 1,
     spaceBetween: 10,
     slidesPerGroup: 1,
+    // autoHeight: true,
     speed: 1000,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
     breakpoints: {
-      // 640: {
-      //   slidesPerView: 2,
-      //   spaceBetween: 20,
-      // },
       768: {
         slidesPerView: 2,
         spaceBetween: 32,
@@ -102,7 +99,7 @@ $(function () {
   if ($(window).width() > 1101) {
     new Swiper(".project-gallary", {
       slidesPerView: "auto",
-      spaceBetween: 0,
+      spaceBetween: 2,
       freeMode: true,
       speed: 800,
       navigation: {
@@ -172,10 +169,10 @@ $(function () {
   });
 
   // responsive
-  let projectWrapper = $(".project-wrapper");
+  let projectWrapper = $(".project-wrapper").height();
   if ($(window).width() < 1101) {
     $(".header-contacts").appendTo(".main-menu__box");
-    if (projectWrapper) {
+    if (projectWrapper > 0) {
       $(".header").removeClass("light");
       $(".header-btn").addClass("btn-primary");
       $(window).on("scroll", function () {
