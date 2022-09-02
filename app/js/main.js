@@ -15,13 +15,21 @@ $(function () {
       $(".header").addClass("light");
       $(".header-btn").removeClass("btn-primary");
     }
-   
+
     scrollPos = scroll;
   });
   // btn menu
   $(".btn-menu").on("click", function () {
     $(this).toggleClass("open");
+    $("body").toggleClass("overflow");
+    $(".main-menu__inner").toggleClass("open");
   });
+  $(".main-menu__inner a").on("click", function () {
+    $(".btn-menu").removeClass("open");
+    $("body").removeClass("overflow");
+    $(".main-menu__inner").removeClass("open");
+  });
+
   //swiper
   const mainSwiper = new Swiper(".main-swiper", {
     loop: false,
@@ -39,9 +47,9 @@ $(function () {
   });
 
   const stepsItems = new Swiper(".steps__items", {
-    slidesPerView: 3,
-    spaceBetween: 145,
-    slidesPerGroup: 3,
+    slidesPerView: 1,
+    spaceBetween: 10,
+    slidesPerGroup: 1,
     speed: 1000,
     navigation: {
       nextEl: ".swiper-button-next",
@@ -52,22 +60,21 @@ $(function () {
       //   slidesPerView: 2,
       //   spaceBetween: 20,
       // },
-      // 768: {
-      //   slidesPerView: 4,
-      //   spaceBetween: 40,
-      // },
-      1024: {
+      768: {
         slidesPerView: 2,
-        spaceBetween: 50,
+        spaceBetween: 32,
         slidesPerGroup: 2,
       },
       1366: {
+        slidesPerView: 3,
         spaceBetween: 50,
       },
       1440: {
+        slidesPerView: 3,
         spaceBetween: 100,
       },
       1600: {
+        slidesPerView: 3,
         spaceBetween: 100,
       },
     },
@@ -92,25 +99,40 @@ $(function () {
   //   },
   //   false
   // );
-
-  new Swiper(".project-gallary", {
-    slidesPerView: "auto",
-    spaceBetween: 0,
-    freeMode: true,
-    speed: 800,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
+  if ($(window).width() > 1101) {
+    new Swiper(".project-gallary", {
+      slidesPerView: "auto",
+      spaceBetween: 0,
+      freeMode: true,
+      speed: 800,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  }
   new Swiper(".projects-swiper", {
-    slidesPerView: 4,
-    spaceBetween: 20,
+    slidesPerView: 1,
+    spaceBetween: 10,
     freeMode: true,
     speed: 1000,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      1200: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+      1366: {
+        slidesPerView: 4,
+        spaceBetween: 20,
+      },
     },
   });
 
@@ -148,4 +170,18 @@ $(function () {
       });
     return false;
   });
+
+  // responsive
+  let projectWrapper = $(".project-wrapper");
+  if ($(window).width() < 1101) {
+    $(".header-contacts").appendTo(".main-menu__box");
+    if (projectWrapper) {
+      $(".header").removeClass("light");
+      $(".header-btn").addClass("btn-primary");
+      $(window).on("scroll", function () {
+        $(".header").removeClass("light");
+        $(".header-btn").addClass("btn-primary");
+      });
+    }
+  }
 });

@@ -80,14 +80,307 @@
         top: -4px
         font-size: 11px
 
+    //services page 
+    .form-grid
+        max-width: 600px
+        grid-column-gap: 40px
+
 @media (max-width: 1100px)
+    body
+        font-size: 18px
+        line-height: 27px
+
     .container
         padding: 0 50px
     .mb-8
         margin-bottom: 50px
-    .main__heading
-        left: 50px
+
+    .header
+        padding: 19px 0
+        &-logo
+            width: 56px
+            height: 40px
+            margin-right: 0
+        &-contacts
+            margin-right: 0
+        &-contact__link
+            width: 26px
+            height: auto
+
     .btn-menu
         display: block
+
+    .main-menu__inner
+        position: absolute
+        left: 0
+        right: 0
+        height: 0
+        top: 0
+        bottom: 0
+        padding: 0 20px
+        overflow: hidden
+        background-color: $black
+        opacity: 0
+        transition: opacity .3s
+        &.open
+            opacity: 1
+            height: 100vh
+
+    .main-menu
+        height: 90%
+        flex-direction: column
+        justify-content: center
+        align-items: center
+
+    .menu-item
+        color: #fff
+    .menu-item:not(:last-child)
+        margin-right: 0
+        margin-bottom: 25px
+
+    .header-contact__link
+        svg path
+            fill: #fff
+        &:not(:last-child)
+            margin-right: 30px
+
+    .main-item
+        &__text
+            min-width: 228px
+        &__box
+            max-width: 750px
+        &__text
+            min-width: 220px
+
+    .main
+        &__inner
+            left: 50px
+        &__heading
+            font-size: 34px
+            line-height: 41px
+        &-btn
+            display: inline-block
+
+    .main-item__box
+        max-width: 100%
+        width: auto
+        margin-top: -16px
+        padding: 0 50px
     .main-item__text
-        min-width: 228px
+        min-width: auto
+
+    .swiper-horizontal>.swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal
+        width: 90%
+        left: 50px
+        margin: 0
+
+    .services-item
+        padding: 20px 0
+
+    .arrow
+        width: 30px
+        height: 14px
+
+    .callback
+        &__inner
+            flex-direction: column
+        &__title
+            margin-bottom: 25px
+            margin-right: 0
+
+    .callback-form
+        max-width: 100%
+
+    .partners__items
+        max-width: 100%
+        display: grid
+        grid-row-gap: 40px
+        grid-template-columns: 1fr 1fr 1fr 1fr
+    .partners-item
+        &:nth-child(2)
+            grid-column-start: 2
+            grid-column-end: 4
+        &:nth-child(3)
+            grid-column-start: 4
+            grid-column-end: 6
+
+    //services page 
+    .services-page
+        padding-top: 82px
+    .services-img
+        margin-bottom: 60px
+    .services__inner
+        padding-right: 0
+        margin-bottom: 0
+        flex-direction: column
+    .container-none
+        padding: 0 50px
+    .services-col__text
+        max-width: 100%
+        width: 100%
+
+    .services-col__img-top
+        display: none
+
+    .services-list
+        margin-bottom: 50px
+
+    .services-col__img-bottom
+        max-width: 371px
+        width: 100%
+        margin-right: auto
+        margin-left: 0
+        margin-bottom: 30px
+    .btn-center
+        width: 100%
+
+    .spollers__item:not(:last-child)
+        margin-bottom: 0
+
+    .spollers__title
+        padding: 10px 0
+        span
+            margin-right: 20px
+    .spollers__text
+        padding-left: 0px
+        padding-top: 20px
+
+    .faq-img img
+        height: 190px
+        object-fit: cover
+        
+    //project
+    .project
+        padding-top: 102px
+
+    .project-wrapper
+        padding-top: 82px
+        margin-bottom: 50px
+
+    .description__inner
+        flex-direction: column
+    .description-info
+        margin-bottom: 50px
+    .description__text
+        margin-left: 0
+
+    .projects-slider .slider__actions
+        display: none
+
+    .project-gallary
+        height: auto
+        overflow: visible
+        .swiper-wrapper
+            flex-direction: column
+        .swiper-slide
+            flex-shrink: 1
+            margin-bottom: 2px
+        .swiper-slide__inner
+            width: auto
+            height: auto
+            padding: 20px
+
+@media (max-width: 640px)
+    .container
+        padding: 0 20px
+
+    .btn
+        padding: 16px 24px
+        font-size: 16px
+        line-height: 17px
+
+    .title
+        font-size: 24px
+        line-height: 30px
+
+    .header-btn
+        display: none
+    .main
+        &__inner
+            left: 20px
+        &__heading
+            margin-bottom: 20px
+    .main-item
+        background-position: -411px
+        &__box
+            margin-top: -30px
+            padding: 0 20px
+        &__text
+            font-size: 12px
+            line-height: 17px
+        &__link
+            display: none
+
+    .swiper-horizontal>.swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal
+        left: 20px
+
+    .services__items
+        margin-bottom: 20px
+
+    .services__btn
+        width: 100%
+
+    .steps
+        &__title
+            margin-bottom: 50px
+        &__items
+            display: flex
+            flex-direction: column-reverse
+            align-items: center
+            margin-bottom: 0
+        &__img
+            display: none
+
+        &-arrows
+            margin-bottom: 0
+
+    .callback
+        &__title
+            text-align: center
+            max-width: 320px
+            width: 100%
+            margin: 0 auto 25px
+        &__title br
+            display: none
+
+    .partners__items
+        grid-column-gap: 10px
+
+    //services page
+    .container-none
+        padding: 0 20px
+
+    .services-img img
+        height: 152px
+        object-fit: cover
+
+    .services-col__title
+        max-width: 350px
+        width: 100%
+        margin-bottom: 30px
+
+    .services-list li
+        &::before
+            top: 9px
+        &:not(:last-child)
+            margin-bottom: 20px
+
+    .services-col__img-bottom
+        display: none
+
+    .projects-swiper
+        flex-direction: column-reverse
+        display: flex
+        align-items: center
+    .projects-item
+        margin-bottom: 20px
+
+    .spollers__title
+        align-items: flex-start
+        img
+            max-width: fit-content
+    .faq
+        margin-bottom: 40px
+    .form-grid
+        display: flex
+        flex-direction: column

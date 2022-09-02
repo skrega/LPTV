@@ -39,13 +39,17 @@
                             </defs>
                         </svg>
                     </a>
-                    <ul class="main-menu">
-                        <li class="menu-item"><a href="project-video.html">проекты</a></li>
-                        <li class="menu-item"><a href="services.html">услуги</a></li>
-                        <li class="menu-item"><a href="#">Предметы</a></li>
-                        <li class="menu-item"><a href="#">о нас</a></li>
-                        <li class="menu-item"><a href="#">Блог</a></li>
-                    </ul>
+                    <div class="main-menu__inner">
+                        <ul class="main-menu">
+                            <li class="menu-item"><a href="project-video.html">проекты</a></li>
+                            <li class="menu-item"><a href="services.html">услуги</a></li>
+                            <li class="menu-item"><a href="#">Предметы</a></li>
+                            <li class="menu-item"><a href="#">о нас</a></li>
+                            <li class="menu-item"><a href="#">Блог</a></li>
+                        </ul>
+                        <div class="main-menu__box">
+                        </div>
+                    </div>
                 </div>
                 <div class="header-col d-flex">
                     <div class="header-contacts d-flex">
@@ -88,7 +92,7 @@
                     <path d="M8 30L1 24.6269M8 30L15 24.6269M8 30L8 -6.03592e-07" stroke="white" stroke-opacity="0.8" />
                 </svg>
             </div>
-            <section id="description" class="project-info-wrapper project-container description mb-5">
+            <section id="description" class="project-info-wrapper project-container description mb-5 container-none">
                 <h1 class="description__title title mb-5">
                     Концепция интерьера ресторана Супра
                 </h1>
@@ -118,7 +122,7 @@
                     </p>
                 </div>
             </section>
-            <section class="projects-slider mb-8">
+            <section class="projects-slider container-none mb-8">
                 <div class="slider">
                     <div class="slider__actions">
                         <div class="swiper-nav">
@@ -307,7 +311,7 @@
                     </div>
                 </div>
             </section>
-            <div class="project-info-wrapper project-container callback section">
+            <div class="project-info-wrapper project-container callback section container-none">
                 <div class="callback__inner d-flex">
                     <h4 class="title callback__title">
                         Для расчёта вашего проекта заполните форму
@@ -395,7 +399,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="js/main.min.js"></script>
-  <!--<script>
+    <!--<script>
         let projectVideoHeigth = $(".project-video").height();
 
         var cursor = document.querySelector(".cursor");

@@ -39,13 +39,17 @@
               </defs>
             </svg>
           </a>
-          <ul class="main-menu">
-            <li class="menu-item"><a href="project-video.html">проекты</a></li>
-            <li class="menu-item"><a href="services.html">услуги</a></li>
-            <li class="menu-item"><a href="#">Предметы</a></li>
-            <li class="menu-item"><a href="#">о нас</a></li>
-            <li class="menu-item"><a href="#">Блог</a></li>
-          </ul>
+          <div class="main-menu__inner">
+            <ul class="main-menu">
+              <li class="menu-item"><a href="project-video.html">проекты</a></li>
+              <li class="menu-item"><a href="services.html">услуги</a></li>
+              <li class="menu-item"><a href="#">Предметы</a></li>
+              <li class="menu-item"><a href="#">о нас</a></li>
+              <li class="menu-item"><a href="#">Блог</a></li>
+            </ul>
+            <div class="main-menu__box">
+            </div>
+          </div>
         </div>
         <div class="header-col d-flex">
           <div class="header-contacts d-flex">
@@ -77,10 +81,13 @@
   <div class="wrapper">
     <main class="main">
       <div class="main-wrapper section">
-        <h1 class="main__heading heading">
-          студия дизайна <br>
-          Алексея Лаптева
-        </h1>
+        <div class="main__inner">
+          <h1 class="main__heading heading">
+            студия дизайна <br>
+            Алексея Лаптева
+          </h1>
+          <a href="#" class="btn main-btn">Рассчитать стоимость</a>
+        </div>
         <div class="main-swiper swiper">
           <div class="swiper-wrapper">
             <div class="main-item swiper-slide" style="background-image: url(images/main-swiper/shinoaru.jpg);">
@@ -294,7 +301,7 @@
         <div class="container">
           <div class="callback__inner d-flex">
             <h4 class="title callback__title">
-              Готовы продумать дизайн-концепцию <br> для смелого проекта даже за скромный бюджет? <br> Оставьте заявку
+              Готовы продумать дизайн-концепцию <br> для смелого проекта даже за скромный бюджет. <br> Оставьте заявку
             </h4>
             <form class="callback-form">
               <span class="wpcf7-form-control-wrap floating-label">
@@ -335,6 +342,9 @@
             </div>
             <div class="partners-item">
               <img src="images/partners/vinoteka.png" alt="">
+            </div>
+            <div class="partners-item">
+              <img src="images/partners/millionka.svg" alt="">
             </div>
             <div class="partners-item">
               <img src="images/partners/nevinnie-radosti.svg" alt="">
