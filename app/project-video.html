@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>КОНЦЕПЦИЯ ИНТЕРЬЕРА РЕСТОРАНА СУПРА</title>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/style.min.css?ver=0.0.1">
 </head>
 
 <body>
@@ -87,11 +87,11 @@
                     <source src="video/lptv_sfinal.mp4" type="video/mp4">
                 </video>
             </a>
-            <!--<div class="cursor">
+            <div class="cursor">
                 <svg width="16" height="31" viewBox="0 0 16 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M8 30L1 24.6269M8 30L15 24.6269M8 30L8 -6.03592e-07" stroke="white" stroke-opacity="0.8" />
                 </svg>
-            </div>-->
+            </div>
             <section id="description" class="project-info-wrapper project-container description mb-5 container-none">
                 <h1 class="description__title title mb-5">
                     Концепция интерьера ресторана Супра
@@ -330,7 +330,7 @@
                         </div>
                         <span class="wpcf7-form-control-wrap floating-label">
                             <input type="text" name="your-name" value="" size="40" class="floating-input"
-                                placeholder=" ">
+                                placeholder=" " data-tel-input maxlength="18">
                             <label for="">+7 (_ _ _) - _ _ _ - _ _ - _ _</label>
                         </span>
                         <p>
@@ -427,36 +427,57 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script src="js/main.min.js"></script>
-    <!--<script>
+    <script src="js/main.min.js?ver=0.0.1"></script>
+    <script>
+        $(".project-video").on('click', function() {
+            let clearUrl = window.location.href.split("#")[0];   
+            window.history.pushState({}, clearUrl);
+        })
+       
         let projectVideoHeigth = $(".project-video").height();
+        let cursor = document.querySelector(".cursor");
+        const header = document.querySelector('header');
 
-        var cursor = document.querySelector(".cursor");
-        document.addEventListener("mousemove", function (e) {
-            var x = e.clientX;
-            var y = e.clientY;
-            cursor.style.transform =
-                `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`;
-        });
-        document.addEventListener("mousedown", function () {
+        document.addEventListener("mousemove", mousemoveCursor);
+        document.addEventListener("mousedown", mousedownAddClass);
+        document.addEventListener("mouseup", mouseupRemoveClass);
+
+        function mousemoveCursor(e) {
+            let x = e.clientX;
+            let y = e.clientY;
+            cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`;
+        }
+
+        function mousedownAddClass() {
             cursor.classList.add("click");
-        });
-        document.addEventListener("mouseup", function () {
+        }
+
+        function mouseupRemoveClass() {
             cursor.classList.remove("click");
-        });
+        }
         $(window).on("scroll", function () {
             let scrollPos = 0;
             let scroll = $(this).scrollTop();
-            console.log(projectVideoHeigth)
-            if (scroll > projectVideoHeigth) {
-                cursor.style.display = 'none'
-                
+            if (scroll > projectVideoHeigth - 200) {
+                document.removeEventListener("mousemove", mousemoveCursor);
+                document.removeEventListener("mousedown", mousedownAddClass);
+                document.removeEventListener("mouseup", mouseupRemoveClass);
+                cursor.classList.add("hover");
             } else {
-                cursor.style.display = 'flex'
+                document.addEventListener("mousemove", mousemoveCursor);
+                document.addEventListener("mousedown", mousedownAddClass);
+                document.addEventListener("mouseup", mouseupRemoveClass);
+                cursor.classList.remove("hover");
             }
             scrollPos = scroll;
         });
-    </script>-->
+        header.addEventListener("mouseover", () => {
+            cursor.classList.add("hover");
+        });
+        header.addEventListener("mouseleave", () => {
+            cursor.classList.remove("hover");
+        });
+    </script>
 </body>
 
 </html>

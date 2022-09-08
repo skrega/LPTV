@@ -44,6 +44,11 @@ $(function () {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
+    autoplay: {
+      delay: 3000,
+      pauseOnMouseEnter: true,
+      disableOnInteraction: false,
+    },
   });
 
   const stepsItems = new Swiper(".steps__items", {
@@ -181,4 +186,64 @@ $(function () {
       });
     }
   }
+
+  // if (mainWrapper) {
+  //   document.addEventListener('mousemove', function mousemoveCursor(e) {
+  //     let x = e.clientX;
+  //     let y = e.clientY;
+  //     if (x > 1000) {
+  //       cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`
+  //       cursorinner.style.display = 'none'
+  //     } else {
+  //       cursorinner.style.display = 'flex'
+  //     }
+  //   });
+  //   document.addEventListener('mousemove', function cursorPosition(e) {
+  //     let x = e.clientX;
+  //     let y = e.clientY;
+  //     if (x < 1000) {
+  //       cursorinner.style.left = x + 'px';
+  //       cursorinner.style.top = y + 'px';
+  //       cursor.style.display = 'none'
+  //     } else {
+  //       cursor.style.display = 'flex'
+  //     }
+  //   });
+  //   document.addEventListener('mousedown', function mousedownAddClass() {
+  //     cursor.classList.add('click');
+  //     cursorinner.classList.add('cursorinnerhover')
+  //   });
+  //   document.addEventListener('mouseup', function mouseupRemoveClass() {
+  //     cursor.classList.remove('click')
+  //     cursorinner.classList.remove('cursorinnerhover')
+  //   });
+  //   $(window).on("scroll", function () {
+  //     let scrollPos = 0;
+  //     let scroll = $(this).scrollTop();
+  //     if (scroll > mainWrapper) {
+  //       cursor.classList.add('hover');
+  //       cursorinner.classList.add('hover')
+  //     } else {
+  //       cursor.classList.remove('hover');
+  //       cursorinner.classList.add('hover')
+  //     }
+  //   });
+  // }
+
+  // a.forEach(item => {
+  //   item.addEventListener('mouseover', () => {
+  //     cursor.classList.add('hover');
+  //   });
+  //   item.addEventListener('mouseleave', () => {
+  //     cursor.classList.remove('hover');
+  //   });
+  // })
+  // swiperScrollBar.addEventListener('mouseover', () => {
+  //   cursor.classList.add('hover');
+  //   cursorinner.classList.add('hover')
+  // });
+  // swiperScrollBar.addEventListener('mouseleave', () => {
+  //   cursor.classList.remove('hover');
+  //   cursorinner.classList.remove('hover')
+  // });
 });

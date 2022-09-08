@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>СТУДИЯ ДИЗАЙНА АЛЕКСЕЯ ЛАПТЕВА</title>
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
   <link rel="stylesheet" href="css/style.min.css">
@@ -311,7 +311,7 @@
                 <label for="">*имя</label>
               </span>
               <span class="wpcf7-form-control-wrap floating-label">
-                <input type="text" name="your-name" value="" size="40" class="floating-input" placeholder=" ">
+                <input type="text" name="your-name" value="" size="40" class="floating-input" placeholder=" " data-tel-input maxlength="18">
                 <label for="">+7 (_ _ _) - _ _ _ - _ _ - _ _</label>
               </span>
               <div class="floating-label">
@@ -363,43 +363,8 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-  <script src="js/main.min.js"></script>
-  <!--<script>
-    let mainWrapper = $('.main-wrapper').height();
-    let cursor = document.querySelector('.cursor');
-    let cursorinner = document.querySelector('.cursor2');
-    if (mainWrapper) {
-      document.addEventListener('mousemove', function (e) {
-        let x = e.clientX;
-        let y = e.clientY;
-        if (x > 1000) {
-          cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`
-          cursorinner.style.display = 'none'
-        } else {
-          cursorinner.style.display = 'flex'
-        }
-      });
-      document.addEventListener('mousemove', function (e) {
-        let x = e.clientX;
-        let y = e.clientY;
-        if (x < 1000) {
-          cursorinner.style.left = x + 'px';
-          cursorinner.style.top = y + 'px';
-          cursor.style.display = 'none'
-        } else {
-          cursor.style.display = 'flex'
-        }
-      });
-      document.addEventListener('mousedown', function () {
-        cursor.classList.add('click');
-        cursorinner.classList.add('cursorinnerhover')
-      });
-      document.addEventListener('mouseup', function () {
-        cursor.classList.remove('click')
-        cursorinner.classList.remove('cursorinnerhover')
-      });
-    }
-  </script> -->
+  <script src="js/main.min.js?ver=0.0.1"></script>
+  <script src="js/libs/cursor-script.js"></script>
 </body>
 
 </html>
