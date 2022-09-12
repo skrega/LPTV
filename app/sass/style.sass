@@ -416,4 +416,45 @@
     padding-left: 70px
     padding-top: 31px
 
+//team page
+.team
+    padding-top: 214px
+    &__inner
+        justify-content: space-between
+    &-col:first-child
+        max-width: 806px
+        width: 100%
+        margin-right: 99px
+    &-col:last-child
+        max-width: 816px
+        width: 100%
+    &-col__img
+        width: 100%
+    &-col__img:first-child
+        margin-right: 17px
+    &-col__gallary
+        display: grid
+        grid-template-columns: 1fr 1fr
+        grid-column-gap: 20px
+    &-gallary
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr
+        grid-column-gap: 20px
+        margin-bottom: 130px
+    &-gallary__img
+        max-width: 560px
+        width: 100%
+        height: auto
+        &:not(:last-child)
+            margin-right: 20px
+    &-from__inner
+        justify-content: space-between
+    &-form__title
+        max-width: 515px
+        width: 100%
+    &__content .team-col:first-child
+        margin-bottom: 32px
+
+
+
 @import media

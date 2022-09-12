@@ -51,7 +51,8 @@
         margin-bottom: 99px
     .mb-8
         margin-bottom: 65px
-
+    .mb-6
+        margin-bottom: 40px
     .btn
         padding: 13px 21px
         font-size: 14px
@@ -290,6 +291,34 @@
             height: auto
             padding: 20px
 
+    //team page
+    .team
+        padding-top: 150px
+        &-col:first-child
+            max-width: 100%
+            margin-right: 0px
+        &-col:last-child
+            max-width: 100%
+        &-col img
+            width: 100%
+        &-col__gallary
+            margin-top: 32px
+        &-col__content
+            margin-bottom: 32px
+        &__content
+            flex-direction: column
+
+    .team__inner
+        flex-direction: column
+        &:nth-child(2)
+            flex-direction: column-reverse
+
+    .team-from__inner
+        flex-direction: column
+    .team-form__title
+        margin: 0 auto 30px
+        text-align: center
+
 @media (max-width: 640px)
     .container
         padding: 0 20px
@@ -362,6 +391,7 @@
 
     .services-img img
         height: 152px
+        width: 100%
         object-fit: cover
 
     .services-col__title
