@@ -117,11 +117,7 @@ $(function () {
       // },
     });
   }
-  // if (video.paused) {
-  //   video.play();
-  // } else {
-  //   video.pause();
-  // }
+
   // video
   let video = document.querySelector(".project-video");
   let volumeBtn = document.querySelector(".btn-sound")
@@ -138,6 +134,7 @@ $(function () {
     },
     false
   );
+
   if ($(window).width() > 1101) {
     new Swiper(".project-gallary", {
       slidesPerView: "auto",

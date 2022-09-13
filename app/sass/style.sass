@@ -233,16 +233,19 @@
         flex-shrink: 0
 
 // project video
-.project-wrapper
-    height: 100%
-    display: flex
-    align-items: center
-    justify-content: center
-    overflow: hidden
-    cursor: none
+.project
+    &-wrapper
+        height: 100%
+        display: flex
+        align-items: center
+        justify-content: center
+        overflow: hidden
+        cursor: none
+    &-link
+        width: 100%
+    &-video
+        height: auto
 
-.project-video
-    height: auto
 .btn-sound
     position: absolute
     right: 100px
@@ -253,6 +256,7 @@
         transition: all .3s
     &.unmute svg line
         stroke-width: 0px
+
 .cursor
     width: 50px
     height: 50px
