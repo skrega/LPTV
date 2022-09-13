@@ -224,6 +224,14 @@
     &-item img
         margin: 0 auto
 
+.partners-item.swiper-slide
+    flex-shrink: 1
+
+.partners__items.active-swiper
+    cursor: grab
+    .partners-item.swiper-slide
+        flex-shrink: 0
+
 // project video
 .project-wrapper
     height: 100%
@@ -235,7 +243,16 @@
 
 .project-video
     height: auto
-
+.btn-sound
+    position: absolute
+    right: 100px
+    bottom: 20px
+    background-color: transparent
+    z-index: 20
+    svg line
+        transition: all .3s
+    &.unmute svg line
+        stroke-width: 0px
 .cursor
     width: 50px
     height: 50px
@@ -276,7 +293,7 @@
 
 .project-gallary
     width: 100%
-    height: 759px
+    height: 659px
     cursor: grab
     .swiper-slide__inner
         width: 480px
@@ -290,7 +307,7 @@
         width: 80%
         height: 85%
         font-size: 20px
-        line-height: 29px
+        line-height: 27px
     .swiper-slide
         width: auto
     .swiper-slide img
@@ -348,18 +365,6 @@
         transition: all .3s cubic-bezier(0.4, 0, 1, 1)
     &__link span
         position: relative
-        padding-right: 17px
-        &::before
-            content: ""
-            position: absolute
-            right: 0
-            top: 0
-            width: 17px
-            height: 17px
-            background-image: url(../images/icons/arrow-link-dark.svg)
-            background-repeat: no-repeat
-            background-size: cover
-            background-position: center center
     &:hover .projects-item__link
         opacity: 1
 
@@ -369,19 +374,20 @@
         padding-top: 5.9vw
     &__inner
         padding-right: 100px
-
     &-col__img-top
         margin-right: 100px
         max-width: 557px
         height: auto
     &-col__title
-        margin-bottom: 40px
+        margin-bottom: 30px
         font-weight: 400
+        &.mb-5
+            margin-bottom: 50px
     &-list li
         position: relative
         padding-left: 17px
         &:not(:last-child)
-            margin-bottom: 27px
+            margin-bottom: 15px
         &::before
             content: ''
             position: absolute

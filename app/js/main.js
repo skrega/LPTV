@@ -82,25 +82,62 @@ $(function () {
     },
   });
 
+  let partnersItemsCount = $('.partners-item').length
+  if (partnersItemsCount > 7) {
+    $('.partners__items').addClass('active-swiper')
+    const partnersItems = new Swiper(".partners__items", {
+      slidesPerView: 7,
+      spaceBetween: 20,
+      slidesPerGroup: 1,
+      speed: 1000,
+      autoplay: {
+        delay: 3000,
+        pauseOnMouseEnter: true,
+        disableOnInteraction: false,
+      },
+
+      // breakpoints: {
+      //   768: {
+      //     slidesPerView: 2,
+      //     spaceBetween: 32,
+      //     slidesPerGroup: 2,
+      //   },
+      //   1366: {
+      //     slidesPerView: 3,
+      //     spaceBetween: 50,
+      //   },
+      //   1440: {
+      //     slidesPerView: 3,
+      //     spaceBetween: 100,
+      //   },
+      //   1600: {
+      //     slidesPerView: 3,
+      //     spaceBetween: 100,
+      //   },
+      // },
+    });
+  }
   // if (video.paused) {
   //   video.play();
   // } else {
   //   video.pause();
   // }
   // video
-
-  // let video = document.querySelector(".project-video");
-  // video.addEventListener(
-  //   "click",
-  //   function () {
-  //     if (video.paused) {
-  //       video.play();
-  //     } else {
-  //       video.pause();
-  //     }
-  //   },
-  //   false
-  // );
+  let video = document.querySelector(".project-video");
+  let volumeBtn = document.querySelector(".btn-sound")
+  volumeBtn.addEventListener(
+    "click",
+    function () {
+      volumeBtn.classList.toggle('unmute')
+      let isMuted =
+          $(this)
+              .toggleClass("btn-sound__mute btn-sound__noisy")
+              .hasClass("btn-sound__mute");
+      $('.project-video').prop("muted", isMuted);
+      video.volume = 0.5;
+    },
+    false
+  );
   if ($(window).width() > 1101) {
     new Swiper(".project-gallary", {
       slidesPerView: "auto",
