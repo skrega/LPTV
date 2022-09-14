@@ -7,6 +7,8 @@ $(function () {
         let a = document.querySelectorAll(".main-item__link");
         let swiperScrollBar = document.querySelector(".swiper-scrollbar");
 
+        const screenWidth = window.screen.width 
+
         const header = document.querySelector('header');
 
         if (mainWrapper) {
@@ -19,7 +21,7 @@ $(function () {
         function mousemoveCursor(e) {
             let x = e.clientX;
             let y = e.clientY;
-            if (x > 1000) {
+            if (x > screenWidth/2) {
                 cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`;
                 cursorinner.style.display = "none";
             } else {
@@ -30,7 +32,7 @@ $(function () {
         function cursorPosition(e) {
             let x = e.clientX;
             let y = e.clientY;
-            if (x < 1000) {
+            if (x < screenWidth/2) {
                 cursorinner.style.left = x + "px";
                 cursorinner.style.top = y + "px";
                 cursor.style.display = "none";
