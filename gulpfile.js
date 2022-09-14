@@ -49,6 +49,25 @@ function scripts() {
     .pipe(dest('app/js'))
     .pipe(browserSync.stream())
 }
+function scriptsLibs() {
+  return src([
+    'app/js/libs/home-script.js',
+  ])
+    .pipe(concat('home-script.min.js'))
+    .pipe(uglify())
+    .pipe(dest('app/js/libs'))
+    .pipe(browserSync.stream())
+}
+function scriptsVideo() {
+  return src([
+    'app/js/libs/video-script.js',
+  ])
+    .pipe(concat('video-script.min.js'))
+    .pipe(uglify())
+    .pipe(dest('app/js/libs'))
+    .pipe(browserSync.stream())
+}
+
 
 
 function styles() {
@@ -76,6 +95,8 @@ function build() {
 function watching() {
   watch(['app/sass/**/*.sass'], styles);
   watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
+  watch(['app/js/**/*.js', '!app/js/libs/home-script.min.js'], scriptsLibs); 
+  watch(['app/js/**/*.js', '!app/js/libs/video-script.min.js'], scriptsVideo); 
   watch(['app/*.html']).on('change', browserSync.reload);
 }
 
@@ -83,11 +104,13 @@ exports.styles = styles;
 exports.watching = watching;
 exports.browsersync = browsersync;
 exports.scripts = scripts;
+exports.scriptsLibs = scriptsLibs;
+exports.scriptsVideo = scriptsVideo;
 exports.images = images;
 exports.cleanDist = cleanDist;
 
 
 exports.build = series(cleanDist, images, build);
-exports.default = parallel(styles ,scripts ,browsersync, watching);
+exports.default = parallel(styles ,scripts, scriptsLibs, scriptsVideo, browsersync, watching);
 
 

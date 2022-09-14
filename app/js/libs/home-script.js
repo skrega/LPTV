@@ -7,8 +7,8 @@ $(function () {
         let a = document.querySelectorAll(".main-item__link");
         let swiperScrollBar = document.querySelector(".swiper-scrollbar");
 
-        const screenWidth = window.screen.width 
-
+        const screenWidth = window.innerWidth
+        console.log(screenWidth)
         const header = document.querySelector('header');
 
         if (mainWrapper) {
