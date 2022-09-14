@@ -7,7 +7,7 @@
     <title>КОНЦЕПЦИЯ ИНТЕРЬЕРА РЕСТОРАНА СУПРА</title>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="css/style.min.css?ver=0.0.1">
+    <link rel="stylesheet" href="css/style.min.css?ver=0.0.2">
 </head>
 
 <body>
@@ -444,7 +444,7 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-<script src="js/main.min.js?ver=0.0.1"></script>
+<script src="js/main.min.js?ver=0.0.2"></script>
 <script>
     $(".project-video").on('click', function () {
         let clearUrl = window.location.href.split("#")[0];
@@ -501,6 +501,18 @@
     videoBtn.addEventListener("mouseleave", () => {
         cursor.classList.remove("hover");
     });
+    // video
+    let video = document.querySelector(".project-video");
+    videoBtn.addEventListener("click", function () {
+        videoBtn.classList.toggle('unmute')
+        let isMuted =
+            $(this)
+                .toggleClass("btn-sound__mute btn-sound__noisy")
+                .hasClass("btn-sound__mute");
+        $('.project-video').prop("muted", isMuted);
+        video.volume = 0.5;
+    }, false);
+
 
 </script>
 </body>

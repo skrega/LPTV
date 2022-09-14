@@ -19,9 +19,6 @@
         font-size: 16px
         line-height: 21px
 
-    .services-list li:not(:last-child)
-        margin-bottom: 16px
-
     .services-list li::before
         top: 8px
 
@@ -116,6 +113,7 @@
             width: 56px
             height: 40px
             margin-right: 0
+            z-index: 1
         &-contacts
             margin-right: 0
         &-contact__link
@@ -134,9 +132,10 @@
         bottom: 0
         padding: 0 20px
         overflow: hidden
-        background-color: $black
         opacity: 0
         transition: opacity .3s
+        background-color: #fff
+        color: $black
         &.open
             opacity: 1
             height: 100vh
@@ -148,16 +147,23 @@
         align-items: center
 
     .menu-item
-        color: #fff
+        color: inherit
+
     .menu-item:not(:last-child)
         margin-right: 0
         margin-bottom: 25px
 
-    .header-contact__link
+    .header.light.open
         svg path
-            fill: #fff
-        &:not(:last-child)
-            margin-right: 30px
+            fill: $black
+            fill-opacity: 1
+        .menu-item
+            color: inherit
+        .btn-menu span
+            background-color: $black
+
+    .header-contact__link:not(:last-child)
+        margin-right: 30px
 
     .main-item
         &__text
@@ -206,7 +212,7 @@
     .callback-form
         max-width: 100%
 
-    .partners__items
+    .partners__items .swiper-wrapper
         max-width: 100%
         display: grid
         grid-row-gap: 40px
@@ -218,7 +224,10 @@
         &:nth-child(3)
             grid-column-start: 4
             grid-column-end: 6
-
+    .partners__items.active-swiper .swiper-wrapper
+        display: flex
+    .cursor
+        display: none
     //services page
     .services-page
         padding-top: 82px
@@ -272,6 +281,14 @@
         padding-top: 82px
         margin-bottom: 50px
 
+    .btn-sound
+        width: 50px
+        height: 50px
+        padding: 0
+        right: 50px
+        svg
+            width: 100%
+            height: 100%
     .description__inner
         flex-direction: column
     .description-info
@@ -385,13 +402,18 @@
             margin: 0 auto 25px
         &__title br
             display: none
-
+        &__title-large
+            max-width: 100%
+            font-size: 22px
     .partners__items
         grid-column-gap: 10px
 
     //services page
     .container-none
         padding: 0 20px
+
+    .services-col__title.mb-5
+        margin-bottom: 40px
 
     .services-img img
         height: 152px
@@ -407,7 +429,7 @@
         &::before
             top: 9px
         &:not(:last-child)
-            margin-bottom: 20px
+            margin-bottom: 10px
 
     .services-col__img-bottom
         display: none
@@ -432,4 +454,19 @@
         display: flex
         flex-direction: column
 
-    
+    .btn-sound
+        width: 35px
+        height: 35px
+        right: 20px
+
+    //team page
+    .team
+      padding-top: 100px
+
+    .team-col__gallary,
+    .team-gallary
+        grid-column-gap: 5px
+
+@media (max-width: 375px)
+    .callback__title-large
+        font-size: 18px
