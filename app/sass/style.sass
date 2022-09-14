@@ -160,9 +160,6 @@
 .steps
     &__title
         margin-bottom: 40px
-    &__items
-        font-size: 20px
-        line-height: 27px
     &-arrows
         display: flex
         align-items: center
@@ -237,7 +234,7 @@
 .project
     &-wrapper
         position: relative
-        height: 100%
+        height: 100vh
         display: flex
         align-items: center
         justify-content: center
@@ -291,12 +288,15 @@
 .project
     padding-top: 164px
 
-.projects-slider .slider__actions
+.projects-slider .slider__actions 
     width: 340px
     display: flex
     align-items: center
     justify-content: center
 
+.projects-swiper.disable-swiper .steps-arrows
+    display: none
+    
 .project-gallary
     width: 100%
     height: 659px
@@ -349,6 +349,8 @@
     &__inner
         position: relative
         margin-bottom: 20px
+    &__img
+        width: 100%
     &__link
         position: absolute
         left: 0
@@ -380,10 +382,13 @@
         padding-top: 5.9vw
     &__inner
         padding-right: 100px
+    &__inner.container-none
+        // margin-top: 230px
     &-col__img-top
         margin-right: 100px
         max-width: 557px
         height: auto
+
     &-col__title
         margin-bottom: 30px
         font-weight: 400
@@ -403,10 +408,21 @@
             height: 4px
             border-radius: 50%
             background-color: $black
-
+    &-col:first-child
+        max-width: 557px
+        width: 100% 
+        margin-right: 103px
+    &-col:last-child
+        max-block-size: 1160px
+        width: 100%
     &-col__img-bottom
         max-width: 641px
         margin-left: 65px
+    // &-title__mobile
+    //     display: none
+    // &-title__desktop
+    //     margin-top: -100px
+    //     margin-bottom: 50px
 
 .spollers__item
     &:not(:last-child)
@@ -466,7 +482,8 @@
         width: 100%
     &__content .team-col:first-child
         margin-bottom: 32px
-
+    &__text.team-col:first-child
+        margin-bottom: 0
 
 
 @import media

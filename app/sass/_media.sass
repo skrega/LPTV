@@ -5,7 +5,7 @@
 
     .title
         font-size: 30px
-        line-height: 44px
+        line-height: 40px
 
     .btn
         padding: 1vw 1.25vw
@@ -42,6 +42,9 @@
     .services-col__img-bottom
         max-width: 461px
 
+    .services-col:first-child
+        margin-right: 30px
+
     .callback-form
         max-width: 460px
 
@@ -52,8 +55,17 @@
     .project-gallary
         height: 529px
 
-    .team-form__title
-        max-width: 495px
+    .team
+        padding-top: 144px
+
+        &-form__title
+            max-width: 495px
+        &__title
+            margin-bottom: 30px
+        &__text
+            margin-bottom: 20px
+        &__subtitle
+            margin-bottom: 30px
 
 @media (max-width: 1366px)
     body
@@ -190,8 +202,6 @@
         &__heading
             font-size: 34px
             line-height: 41px
-        &-btn
-            display: inline-block
 
     .main-item__box
         max-width: 100%
@@ -240,32 +250,34 @@
     .cursor
         display: none
     //services page
-    .services-page
-        padding-top: 82px
-    .services-img
-        margin-bottom: 60px
-    .services__inner
-        padding-right: 0
-        margin-bottom: 0
-        flex-direction: column
+    .services
+        &-page
+            padding-top: 82px
+        &__inner-title
+            text-align: center
+        &-img
+            margin-bottom: 60px
+        &__inner
+            padding-right: 0
+            margin-bottom: 0
+            flex-direction: column
+        &-col__text
+            max-width: 100%
+            width: 100%
+        &-col__img-top
+            display: none
+        &-list
+            margin-bottom: 50px
+        &-col__img-bottom
+            max-width: 371px
+            width: 100%
+            margin-right: auto
+            margin-left: 0
+            margin-bottom: 30px
+
     .container-none
         padding: 0 50px
-    .services-col__text
-        max-width: 100%
-        width: 100%
 
-    .services-col__img-top
-        display: none
-
-    .services-list
-        margin-bottom: 50px
-
-    .services-col__img-bottom
-        max-width: 371px
-        width: 100%
-        margin-right: auto
-        margin-left: 0
-        margin-bottom: 30px
     .btn-center
         width: 100%
 
@@ -371,6 +383,8 @@
             left: 20px
         &__heading
             margin-bottom: 20px
+        &-btn
+            display: inline-block
     .main-item
         background-position: -411px
         &__box
@@ -387,7 +401,9 @@
 
     .services__items
         margin-bottom: 20px
-
+    .services-item__title
+        max-width: 330px
+        width: 100%
     .services__btn
         width: 100%
 
@@ -445,6 +461,9 @@
     .services-col__img-bottom
         display: none
 
+    .spollers__title span
+        margin-top: 6px
+
     .projects-swiper
         flex-direction: column-reverse
         display: flex
@@ -478,6 +497,12 @@
     .team-gallary
         grid-column-gap: 5px
 
+    .team__inner
+        margin-bottom: 60px
+
+    .projects-swiper.disable-swiper .steps-arrows
+        display: flex
+        
 @media (max-width: 375px)
     .callback__title-large
         font-size: 18px

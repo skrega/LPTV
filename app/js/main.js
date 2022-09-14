@@ -124,6 +124,13 @@ $(function () {
       },
     });
   }
+
+  let projectsItemCount = $('.projects-item').length
+  if (projectsItemCount >= 5){
+    $('.projects-swiper').addClass('active-swiper')
+  } else {
+    $('.projects-swiper').addClass('disable-swiper')
+  }
   new Swiper(".projects-swiper", {
     slidesPerView: 1,
     spaceBetween: 10,
